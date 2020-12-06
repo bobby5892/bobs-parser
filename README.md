@@ -1,1 +1,13 @@
-# bobs-parser
+# Welcome to Bobs Parser
+
+This is an ultralight little log parsing tool that is meant to watch a log file and then compare it to some key phrases.
+
+
+# Usage Process
+* Choose the Phrases you'll want to watch for
+* Choose what phrase to compare that phrase against
+* Click File -> Open -> Navigate to your Log file
+* Click Start Monitoring Button
+
+As your log file changes it will update totals and percentages
+

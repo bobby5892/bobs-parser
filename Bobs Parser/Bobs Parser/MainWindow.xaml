@@ -1,0 +1,61 @@
+﻿<Window x:Class="Bobs_Parser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bobs_Parser"
+        mc:Ignorable="d"
+        Title="Bob's Log Parser 1.0" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="openBobsFileDialogBox"/>
+                <Separator />
+                <MenuItem Header="_Exit" Click="menuExit"/>
+            </MenuItem>
+            <MenuItem Header="_About" Click="menuAbout"/>
+        </Menu>
+        <Grid Width="800">
+            <TextBox x:Name="Phrase1_textBox" HorizontalAlignment="Left" Margin="22,50,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase1_Label" Content="Phrase 1" HorizontalAlignment="Left" Margin="22,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase2_textBox" HorizontalAlignment="Left" Margin="22,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase2_Label" Content="Phrase 2" HorizontalAlignment="Left" Margin="22,80,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase3_textBox" HorizontalAlignment="Left" Margin="22,150,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase3_Label" Content="Phrase 3" HorizontalAlignment="Left" Margin="22,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase4_textBox" HorizontalAlignment="Left" Margin="22,200,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase4_Label" Content="Phrase 4" HorizontalAlignment="Left" Margin="22,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase5_textBox" HorizontalAlignment="Left" Margin="22,250,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase5_Label" Content="Phrase 5" HorizontalAlignment="Left" Margin="22,230,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase6_textBox" HorizontalAlignment="Left" Margin="22,300,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase6_Label" Content="Phrase 6" HorizontalAlignment="Left" Margin="22,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase7_textBox" HorizontalAlignment="Left" Margin="22,350,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase7_Label" Content="Phrase 7" HorizontalAlignment="Left" Margin="22,330,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <Button  x:Name="startMonitoringButton" Content="_Start Monitoring" HorizontalAlignment="Left" Margin="590,346,0,0" VerticalAlignment="Top" Click="startMonitoring" IsEnabled="False"/>
+            <Label Content="" HorizontalAlignment="Left" Margin="416,36,0,0" VerticalAlignment="Top" Height="27" Width="37" RenderTransformOrigin="-1.981,-0.003"/>
+            <Label Content="Compare Against" HorizontalAlignment="Left" Margin="316,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.27,-0.358"/>
+            <ComboBox x:Name="Phrase1_ComboBox" HorizontalAlignment="Left" Margin="316,50,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase2_ComboBox" HorizontalAlignment="Left" Margin="316,100,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase3_ComboBox" HorizontalAlignment="Left" Margin="316,150,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase4_ComboBox" HorizontalAlignment="Left" Margin="316,200,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase5_ComboBox" HorizontalAlignment="Left" Margin="316,250,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase6_ComboBox" HorizontalAlignment="Left" Margin="316,300,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase7_ComboBox" HorizontalAlignment="Left" Margin="316,350,0,0" VerticalAlignment="Top" Width="120"/>
+
+            <ListView x:Name="mainDataGrid" Margin="453,5,28,75" Grid.Row="1">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView x:Name="grdNames">
+                        <GridViewColumn Header="Phrase"  DisplayMemberBinding="{Binding Phrase}"/>
+                        <GridViewColumn Header="Count" DisplayMemberBinding="{Binding Count}" />
+                        <GridViewColumn Header="Compared Count" DisplayMemberBinding="{Binding ComparedCount}"/>
+                        <GridViewColumn Header="Occurance Rate" DisplayMemberBinding="{Binding OccuranceRate}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </DockPanel>
+</Window>
