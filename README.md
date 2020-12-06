@@ -1,5 +1,7 @@
 # Welcome to Bobs Parser
 
+![Bobs Parser](screenshot.png)
+
 This is an ultralight little log parsing tool that is meant to watch a log file and then compare it to some key phrases.
 
 
