@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bobs_Parser"
         mc:Ignorable="d"
-        Title="Bob's Log Parser 1.0" Height="450" Width="800">
+        Title="Bob's Log Parser 1.1" Height="600" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -15,7 +15,7 @@
             </MenuItem>
             <MenuItem Header="_About" Click="menuAbout"/>
         </Menu>
-        <Grid Width="800">
+        <Grid Width="800" Height="533">
             <TextBox x:Name="Phrase1_textBox" HorizontalAlignment="Left" Margin="22,50,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
             <Label x:Name="Phrase1_Label" Content="Phrase 1" HorizontalAlignment="Left" Margin="22,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
             <TextBox x:Name="Phrase2_textBox" HorizontalAlignment="Left" Margin="22,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TextChanged="textBox_TextChanged"/>
@@ -30,7 +30,15 @@
             <Label x:Name="Phrase6_Label" Content="Phrase 6" HorizontalAlignment="Left" Margin="22,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
             <TextBox x:Name="Phrase7_textBox" HorizontalAlignment="Left" Margin="22,350,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
             <Label x:Name="Phrase7_Label" Content="Phrase 7" HorizontalAlignment="Left" Margin="22,330,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
-            <Button  x:Name="startMonitoringButton" Content="_Start Monitoring" HorizontalAlignment="Left" Margin="590,346,0,0" VerticalAlignment="Top" Click="startMonitoring" IsEnabled="False"/>
+            <TextBox x:Name="Phrase8_textBox" HorizontalAlignment="Left" Margin="22,400,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase8_Label" Content="Phrase 8" HorizontalAlignment="Left" Margin="22,380,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase9_textBox" HorizontalAlignment="Left" Margin="22,450,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase9_Label" Content="Phrase 9" HorizontalAlignment="Left" Margin="22,430,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <TextBox x:Name="Phrase10_textBox" HorizontalAlignment="Left" Margin="22,500,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="textBox_TextChanged"/>
+            <Label x:Name="Phrase10_Label" Content="Phrase 10" HorizontalAlignment="Left" Margin="22,480,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.072,-0.154"/>
+            <Button  x:Name="startMonitoringButton" Content="_Start Monitoring" HorizontalAlignment="Left" Margin="642,457,0,0" VerticalAlignment="Top" Click="startMonitoring" IsEnabled="False"/>
+            <Button  x:Name="stopMonitoringButton" Content="S_top Monitoring" HorizontalAlignment="Left" Margin="642,457,0,0" VerticalAlignment="Top" Click="stopMonitoring" IsEnabled="False" Visibility="Hidden"/>
+            <Button  x:Name="clearCurrentStatsButton" Content="_Clear Counts" HorizontalAlignment="Left" Margin="504,459,0,0" VerticalAlignment="Top" Click="clearStats"/>
             <Label Content="" HorizontalAlignment="Left" Margin="416,36,0,0" VerticalAlignment="Top" Height="27" Width="37" RenderTransformOrigin="-1.981,-0.003"/>
             <Label Content="Compare Against" HorizontalAlignment="Left" Margin="316,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.27,-0.358"/>
             <ComboBox x:Name="Phrase1_ComboBox" HorizontalAlignment="Left" Margin="316,50,0,0" VerticalAlignment="Top" Width="120"/>
@@ -40,8 +48,11 @@
             <ComboBox x:Name="Phrase5_ComboBox" HorizontalAlignment="Left" Margin="316,250,0,0" VerticalAlignment="Top" Width="120"/>
             <ComboBox x:Name="Phrase6_ComboBox" HorizontalAlignment="Left" Margin="316,300,0,0" VerticalAlignment="Top" Width="120"/>
             <ComboBox x:Name="Phrase7_ComboBox" HorizontalAlignment="Left" Margin="316,350,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase8_ComboBox" HorizontalAlignment="Left" Margin="316,400,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase9_ComboBox" HorizontalAlignment="Left" Margin="316,450,0,0" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Phrase10_ComboBox" HorizontalAlignment="Left" Margin="316,500,0,0" VerticalAlignment="Top" Width="120"/>
 
-            <ListView x:Name="mainDataGrid" Margin="453,5,28,75" Grid.Row="1">
+            <ListView x:Name="mainDataGrid" Margin="453,5,28,92">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center" />

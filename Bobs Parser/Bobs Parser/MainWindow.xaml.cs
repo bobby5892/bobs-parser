@@ -57,13 +57,15 @@ namespace Bobs_Parser
             this.buildDataGrid();
             this.IsMonitoring = true;
             this.monitor();
-
+            this.stopMonitoringButton.Visibility = Visibility.Visible;
+            this.stopMonitoringButton.IsEnabled = true;
+            this.clearCurrentStats();
         }
 
         private void setup()
         {
             // Quick Reference for Later
-            this.PhraseBoxes = new List<TextBox>() { Phrase1_textBox, Phrase2_textBox, Phrase3_textBox, Phrase4_textBox, Phrase5_textBox, Phrase6_textBox, Phrase7_textBox };
+            this.PhraseBoxes = new List<TextBox>() { Phrase1_textBox, Phrase2_textBox, Phrase3_textBox, Phrase4_textBox, Phrase5_textBox, Phrase6_textBox, Phrase7_textBox, Phrase8_textBox, Phrase9_textBox, Phrase10_textBox };
             this.DataGridContent = new ObservableCollection<GridStat>();
             this.mainDataGrid.ItemsSource = this.DataGridContent;
             this.populateComboBoxes();
@@ -123,8 +125,8 @@ namespace Bobs_Parser
         private void setupInitialValues()
         {
             // Initial Values
-            this.PhraseCount = new List<Int32>() { 0, 0, 0, 0, 0, 0, 0 };
-            this.PhraseCompareAgainst = new List<Int32>() { 0, 0, 0, 0, 0, 0, 0 };
+            this.PhraseCount = new List<Int32>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            this.PhraseCompareAgainst = new List<Int32>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         }
 
         private void buildDataGrid()
@@ -173,7 +175,16 @@ namespace Bobs_Parser
                             case "Phrase 7":
                                 this.DataGridContent[o].ComparedCount = this.PhraseCount[6];
                                 break;
-                            
+                            case "Phrase 8":
+                                this.DataGridContent[o].ComparedCount = this.PhraseCount[7];
+                                break;
+                            case "Phrase 9":
+                                this.DataGridContent[o].ComparedCount = this.PhraseCount[8];
+                                break;
+                            case "Phrase 10":
+                                this.DataGridContent[o].ComparedCount = this.PhraseCount[9];
+                                break;
+
                         }
                         // Update Perecent
                         if(this.DataGridContent[o].Count != 0 && this.DataGridContent[o].ComparedCount != 0)
@@ -216,7 +227,7 @@ namespace Bobs_Parser
         }
         private void populateComboBoxes()
         {
-            this.comboBoxes = new List<ComboBox>() { Phrase1_ComboBox, Phrase2_ComboBox, Phrase3_ComboBox, Phrase4_ComboBox, Phrase5_ComboBox, Phrase6_ComboBox, Phrase7_ComboBox };
+            this.comboBoxes = new List<ComboBox>() { Phrase1_ComboBox, Phrase2_ComboBox, Phrase3_ComboBox, Phrase4_ComboBox, Phrase5_ComboBox, Phrase6_ComboBox, Phrase7_ComboBox, Phrase8_ComboBox, Phrase9_ComboBox, Phrase10_ComboBox };
             for (int o = 0; o < this.PhraseBoxes.Count; o++)
             {
                 for (int i = 1; i <= this.PhraseBoxes.Count; i++)
@@ -287,10 +298,41 @@ namespace Bobs_Parser
             MessageBox.Show("For my dad and his games.\n" +
                 "Made by https://github.com/bobby5892 \n" +
                 "2020\n" + 
-                "Version: 1.0\n");
+                "Version: 1.1\n");
         }
+        private void clearStats(object sender, RoutedEventArgs e)
+        {
+            this.clearCurrentStats();
+        }
+        private void clearCurrentStats()
+        {
+            this.setupInitialValues();
+            this.updateDataGrid();
 
- 
+            for (int i = 0; i < this.DataGridContent.Count; i++)
+            {
+                this.DataGridContent[i].OccuranceRate = "...";
+            }
+        }
+        private void stopMonitoring(object sender, RoutedEventArgs e)
+        {
+            this.IsMonitoring = false;
+            this.reEnableControls();
+            this.startMonitoringButton.Visibility = Visibility.Visible;
+            this.stopMonitoringButton.Visibility = Visibility.Hidden;
+            this.startMonitoringButton.IsEnabled = true;
+        }
+        private void reEnableControls()
+        {
+            for (int i = 0; i < this.PhraseBoxes.Count; i++)
+            {
+                this.PhraseBoxes[i].IsEnabled = true;
+            }
+            for (int i = 0; i < this.comboBoxes.Count; i++)
+            {
+                this.comboBoxes[i].IsEnabled = true;
+            }
+        }
     }
 }
 
