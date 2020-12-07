@@ -14,8 +14,8 @@ This is an ultralight little log parsing tool that is meant to watch a log file 
 As your log file changes it will update totals and percentages
 
 # Download
-[Version 1.1 ](https://github.com/bobby5892/bobs-parser/blob/main/Bobs%20Parser/ReleaseBuild/1_1/Bobs%20Parser1_1.zip)
-[Version 1.0 ](https://github.com/bobby5892/bobs-parser/blob/main/Bobs%20Parser/ReleaseBuild/1_0/Bobs%20Parser1_0.zip)
+* [Version 1.1 ](https://github.com/bobby5892/bobs-parser/raw/main/Bobs%20Parser/ReleaseBuild/1_1/Bobs%20Parser1_1.zip)
+* [Version 1.0 ](https://github.com/bobby5892/bobs-parser/raw/main/Bobs%20Parser/ReleaseBuild/1_0/Bobs%20Parser1_0.zip)
 
 # Download Instructions
 * Extract Zip
